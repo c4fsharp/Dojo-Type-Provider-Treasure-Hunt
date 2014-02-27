@@ -48,7 +48,7 @@ let doc = Sample.GetSample()
 let key = "6ce0ef5b176501f8c07c634dfa933cff"
 let name = "craig"
 let data = 
-  Http.Request
+  Http.RequestString
     ( "http://api.themoviedb.org/3/search/person",
       query = [ ("query", "craig"); ("api_key", key) ],
       headers = ["accept", "application/json"] )
