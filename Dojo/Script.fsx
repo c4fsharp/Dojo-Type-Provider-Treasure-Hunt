@@ -1,5 +1,5 @@
 ﻿#r "System.Xml.Linq.dll"
-#r "packages/FSharp.Data.2.0.0-alpha6/lib/net40/FSharp.Data.dll"
+#r "packages/FSharp.Data.2.0.0-beta2/lib/net40/FSharp.Data.dll"
 open FSharp.Data
 
 // ------------------------------------------------------------------
