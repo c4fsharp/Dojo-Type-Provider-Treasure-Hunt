@@ -82,7 +82,7 @@ first.Name
 // ------------------------------------------------------------------
 
 // Demo - using CSV provider to read CSV file with custom separator
-type Lib = CsvProvider<"data/mortalityny.tsv", Separators="\t">
+type Lib = CsvProvider<"data/mortalityny.tsv">
 // Read the sample file - explore the collection of rows in "lib.Data"
 let lib = new Lib()
 
