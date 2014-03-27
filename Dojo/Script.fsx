@@ -51,7 +51,7 @@ let data =
   Http.RequestString
     ( "http://api.themoviedb.org/3/search/person",
       query = [ ("query", "craig"); ("api_key", key) ],
-      headers = ["accept", "application/json"] )
+      headers = [ HttpRequestHeaders.Accept HttpContentTypes.Json ] )
 
 // Parse result using JSON provider
 // (using sample result to generate types)
