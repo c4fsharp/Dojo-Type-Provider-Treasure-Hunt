@@ -1,5 +1,5 @@
 ﻿#r "System.Xml.Linq.dll"
-#r "packages/FSharp.Data.2.0.0-beta2/lib/net40/FSharp.Data.dll"
+#r "packages/FSharp.Data.2.0.4/lib/net40/FSharp.Data.dll"
 open FSharp.Data
 
 // ------------------------------------------------------------------
@@ -51,7 +51,7 @@ let data =
   Http.RequestString
     ( "http://api.themoviedb.org/3/search/person",
       query = [ ("query", "craig"); ("api_key", key) ],
-      headers = ["accept", "application/json"] )
+      headers = [ HttpRequestHeaders.Accept HttpContentTypes.Json ] )
 
 // Parse result using JSON provider
 // (using sample result to generate types)
@@ -82,7 +82,7 @@ first.Name
 // ------------------------------------------------------------------
 
 // Demo - using CSV provider to read CSV file with custom separator
-type Lib = CsvProvider<"data/mortalityny.tsv", Separators="\t">
+type Lib = CsvProvider<"data/mortalityny.tsv">
 // Read the sample file - explore the collection of rows in "lib.Data"
 let lib = new Lib()
 
