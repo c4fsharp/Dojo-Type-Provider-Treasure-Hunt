@@ -1,5 +1,5 @@
 ﻿#r "System.Xml.Linq.dll"
-#r "packages/FSharp.Data.2.0.4/lib/net40/FSharp.Data.dll"
+#r "packages/FSharp.Data.2.2.2/lib/net40/FSharp.Data.dll"
 open FSharp.Data
 
 // ------------------------------------------------------------------
@@ -14,7 +14,7 @@ open FSharp.Data
 // Create connection to the WorldBank service
 let wb = WorldBankData.GetDataContext()
 // Get specific indicator for a specific country at a given year
-wb.Countries.``Czech Republic``.Indicators.``Population (Total)``.[2000]
+wb.Countries.``Czech Republic``.Indicators.``Population, total``.[2000]
 // Get a list of countries in a specified region
 wb.Regions.``Euro area``.Countries
 
@@ -32,15 +32,14 @@ type Sample = XmlProvider<"data/Writers.xml">
 // Load the sample document - explore properties using "doc."
 let doc = Sample.GetSample()
 
-
 // ------------------------------------------------------------------
 // WORD #3
 //
 // Get the ID of a director whose name contains "Haugerud" and then
 // search for all movie credits where he appears. Then return the 
-// second (last) word from the movie he directed (the resulting type
-// has properties "Credits" and "Crew" - you need movie from the 
-// Crew list (there is only one).
+// second (last) word from the first movie he directed (the resulting 
+// type has properties "Credits" and "Crew" - you need movie from the 
+// Crew list.
 // ------------------------------------------------------------------
 
 // Using The MovieDB REST API
@@ -82,29 +81,27 @@ first.Name
 // ------------------------------------------------------------------
 
 // Demo - using CSV provider to read CSV file with custom separator
-type Lib = CsvProvider<"data/mortalityny.tsv">
+type Lib = CsvProvider<"data/mortalityny.tsv", Separators="\t">
 // Read the sample file - explore the collection of rows in "lib.Data"
 let lib = new Lib()
 
+// NOTE: The librarycalls.csv file uses ';' as the separator!
 
 // ------------------------------------------------------------------
 // WORD #5
 //
-// Use Freebase type provider to find chemical element with 
-// "Atomic number" equal to 36 and then return the 3rd and 2nd 
+// In addition to XML, JSON and CSV, the F# Data library can also
+// parse HTML tables! Use the HtmlProvider to read data from wiki
+// page with chemical elements (or use local 'data/elements.html'):
+//   - http://en.wikipedia.org/wiki/List_of_elements
+//
+// Your task is to find chemical element with "Atomic number" equal 
+// to 36 (column 'Z' of the table) and then return the 3rd and 2nd 
 // letter from the *end* of its name (that is 5th and 6th letter
 // from the start).
 // ------------------------------------------------------------------
 
-// Create connection to the Freebase service
-let fb = FreebaseData.GetDataContext()
-
-// Query stars in the science & technology category
-// (You'll need "Science and Technology" and then "Chemistry")
-query { for e in fb.``Science and Technology``.Astronomy.Stars do 
-        where e.Distance.HasValue
-        select (e.Name, e.Distance) } 
-|> Seq.toList
+// Use HtmlProvider with "data/elements.html" file as a sample
 
 // ------------------------------------------------------------------
 // WORD #6
@@ -116,7 +113,6 @@ query { for e in fb.``Science and Technology``.Astronomy.Stars do
 // ------------------------------------------------------------------
 
 // Use CsvProvider with the "data/titanic.csv" file as a sample
-
 
 // ------------------------------------------------------------------
 // WORD #7
