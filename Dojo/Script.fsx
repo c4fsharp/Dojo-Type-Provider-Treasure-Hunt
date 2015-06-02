@@ -49,7 +49,7 @@ let name = "craig"
 let data = 
   Http.RequestString
     ( "http://api.themoviedb.org/3/search/person",
-      query = [ ("query", "craig"); ("api_key", key) ],
+      query = [ ("query", name); ("api_key", key) ],
       headers = [ HttpRequestHeaders.Accept HttpContentTypes.Json ] )
 
 // Parse result using JSON provider
