@@ -37,7 +37,7 @@ let doc = Sample.GetSample()
 //
 // Get the ID of a director whose name contains "Haugerud" and then
 // search for all movie credits where he appears. Then return the 
-// second (last) word from the first movie he directed (the resulting 
+// second (last) word from the movie he directed in 2012 (the resulting 
 // type has properties "Credits" and "Crew" - you need movie from the 
 // Crew list.
 // ------------------------------------------------------------------
