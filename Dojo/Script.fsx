@@ -16,8 +16,8 @@ let wb = WorldBankData.GetDataContext()
 // Get specific indicator for a specific country at a given year
 wb.Countries.``Czech Republic``.Indicators.``Population, total``.[2000]
 // Get a list of countries in a specified region
-wb.Regions.``Euro area``.Countries
-
+for c in wb.Regions.``Euro area``.Countries do
+  printfn "%s" c.Name
 
 // ------------------------------------------------------------------
 // WORD #2
