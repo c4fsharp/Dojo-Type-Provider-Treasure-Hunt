@@ -16,8 +16,8 @@ let wb = WorldBankData.GetDataContext()
 // Get specific indicator for a specific country at a given year
 wb.Countries.``Czech Republic``.Indicators.``Population, total``.[2000]
 // Get a list of countries in a specified region
-wb.Regions.``Euro area``.Countries
-
+for c in wb.Regions.``Euro area``.Countries do
+  printfn "%s" c.Name
 
 // ------------------------------------------------------------------
 // WORD #2
@@ -82,8 +82,8 @@ first.Name
 
 // Demo - using CSV provider to read CSV file with custom separator
 type Lib = CsvProvider<"data/mortalityny.tsv", Separators="\t">
-// Read the sample file - explore the collection of rows in "lib.Data"
-let lib = new Lib()
+// Read the sample file - explore the collection of rows in "lib.Rows"
+let lib = Lib.GetSample()
 
 // NOTE: The librarycalls.csv file uses ';' as the separator!
 
