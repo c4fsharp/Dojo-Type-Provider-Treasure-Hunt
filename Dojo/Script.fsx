@@ -82,8 +82,8 @@ first.Name
 
 // Demo - using CSV provider to read CSV file with custom separator
 type Lib = CsvProvider<"data/mortalityny.tsv", Separators="\t">
-// Read the sample file - explore the collection of rows in "lib.Data"
-let lib = new Lib()
+// Read the sample file - explore the collection of rows in "lib.Rows"
+let lib = Lib.GetSample()
 
 // NOTE: The librarycalls.csv file uses ';' as the separator!
 
