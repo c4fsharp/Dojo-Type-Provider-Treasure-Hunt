@@ -108,7 +108,7 @@ let lib = Lib.GetSample()
 //
 // Use CsvProvider to load the Titanic data set from "data/Titanic.csv"
 // (using the default column separator) and find the name of a female
-// passenger who was 19 years old and embarked in the prot marked "Q"
+// passenger who was 19 years old and embarked in the port marked "Q"
 // Then return Substring(19, 3) from her name.
 // ------------------------------------------------------------------
 
