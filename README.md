@@ -18,7 +18,7 @@ in about 1 hour. With more time, each group can find multiple words.
 
 ## Building and running the sample
 
-The sampe solution uses NuGet restore to get the `FSharp.Data.dll` automatically. Open `TypeProviders-Dojo.sln` and 
+The sample solution uses NuGet restore to get the `FSharp.Data.dll` automatically. Open `TypeProviders-Dojo.sln` and 
 Build the solution once - this will download F# Data into `packages` folder and you can then open `Script.fsx` and 
 go through the script in F# Interactive (the build is only needed to restore the packages).
 

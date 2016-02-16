@@ -1,5 +1,5 @@
 ﻿#r "System.Xml.Linq.dll"
-#r "packages/FSharp.Data.2.2.2/lib/net40/FSharp.Data.dll"
+#r "packages/FSharp.Data.2.2.5/lib/net40/FSharp.Data.dll"
 open FSharp.Data
 
 // ------------------------------------------------------------------
@@ -14,7 +14,7 @@ open FSharp.Data
 // Create connection to the WorldBank service
 let wb = WorldBankData.GetDataContext()
 // Get specific indicator for a specific country at a given year
-wb.Countries.``Czech Republic``.Indicators.``Population ages 0-14 (% of total)``.[2000]
+wb.Countries.``Czech Republic``.Indicators.``Population, ages 0-14 (% of total)``.[2000]
 // Get a list of countries in a specified region
 for c in wb.Regions.``Euro area``.Countries do
   printfn "%s" c.Name
@@ -108,7 +108,7 @@ let lib = Lib.GetSample()
 //
 // Use CsvProvider to load the Titanic data set from "data/Titanic.csv"
 // (using the default column separator) and find the name of a female
-// passenger who was 19 years old and embarked in the prot marked "Q"
+// passenger who was 19 years old and embarked in the port marked "Q"
 // Then return Substring(19, 3) from her name.
 // ------------------------------------------------------------------
 
