@@ -14,7 +14,7 @@ open FSharp.Data
 // Create connection to the WorldBank service
 let wb = WorldBankData.GetDataContext()
 // Get specific indicator for a specific country at a given year
-wb.Countries.``Czech Republic``.Indicators.``Population ages 0-14 (% of total)``.[2000]
+wb.Countries.``Czech Republic``.Indicators.``Population, ages 0-14 (% of total)``.[2000]
 // Get a list of countries in a specified region
 for c in wb.Regions.``Euro area``.Countries do
   printfn "%s" c.Name
