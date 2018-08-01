@@ -1,0 +1,5 @@
+RESTRICTION: == net461
+NUGET
+  remote: https://api.nuget.org/v3/index.json
+    FSharp.Core (4.5.2)
+    FSharp.Data (2.4.6)
