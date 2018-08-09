@@ -1,6 +1,6 @@
 source https://api.nuget.org/v3/index.json
-
+storage: none
 framework: auto-detect
 
 nuget FSharp.Core 4.5.2
-nuget FSharp.Data 2.4.6
+nuget FSharp.Data 3.0.0-beta4
